@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
 
-import { User } from "../entity/User";
+import User from "../entity/User";
 
 import { isEmpty, validate } from "class-validator";
 
