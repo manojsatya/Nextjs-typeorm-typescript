@@ -38,7 +38,7 @@ const register = async (req: Request, res: Response) => {
     return res.json(user);
   } catch (error) {
     console.log(error);
-    res.status(500).json(error);
+    return res.status(500).json(error);
   }
 };
 
@@ -61,7 +61,7 @@ const login = async (req: Request, res: Response) => {
     if (!passwordMatches)
       return res.status(401).json({ password: "Invalid password" });
 
-    const token = jwt.sign({ username }, process.env.JWT_SECRET);
+    const token = jwt.sign({ username }, process.env.JWT_SECRET!);
 
     res.set(
       "Set-cookie",
@@ -75,7 +75,10 @@ const login = async (req: Request, res: Response) => {
     );
 
     return res.json(user);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+    return res.json({ error: "Something went wrong" });
+  }
 };
 
 const me = (_: Request, res: Response) => {

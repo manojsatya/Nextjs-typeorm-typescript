@@ -1,4 +1,4 @@
-import { IsEmail, Length, Min } from "class-validator";
+import { IsEmail, Length } from "class-validator";
 import {
   Entity as TOEntity,
   Column,

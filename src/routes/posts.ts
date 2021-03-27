@@ -19,7 +19,7 @@ const createPost = async (req: Request, res: Response) => {
     return res.json(post);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "Something went wrong" });
+    return res.status(500).json({ error: "Something went wrong" });
   }
 };
 

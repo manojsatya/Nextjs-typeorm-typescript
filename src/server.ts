@@ -19,7 +19,7 @@ app.use(morgan("dev"));
 app.use(trim);
 app.use(cookieParser());
 
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.send("Hello world");
 });
 app.use("/api/auth", authRoutes);
