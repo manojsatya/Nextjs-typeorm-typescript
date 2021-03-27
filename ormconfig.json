@@ -5,7 +5,7 @@
   "username": "manoj",
   "password": "manoj123",
   "database": "readit",
-  "synchronize": true,
+  "synchronize": false,
   "logging": true,
   "entities": ["src/entity/**/*.ts"],
   "migrations": ["src/migration/**/*.ts"],
